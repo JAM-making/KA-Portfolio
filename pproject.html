@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anna Kephart Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+            color: #222;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #0066cc;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #004080;
+        }
+        main {
+            padding: 20px 40px;
+        }
+        h1, h2, h3 {
+            color: #004080;
+        }
+        section {
+            margin-bottom: 60px;
+        }
+        .references {
+            border-top: 2px solid #004080;
+            padding-top: 15px;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        ul, ol {
+            margin-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Anna Kephart Portfolio</h1>
+    <p>ITS & Cybersecurity Coursework Compilation</p>
+</header>
+
+<nav>
+    <a href="#vulnerabilities">Known Vulnerabilities</a>
+    <a href="#performance">Performance Tuning</a>
+    <a href="#malware">Malware Detection</a>
+    <a href="#ethics">Ethics and IT</a>
+    <a href="#resume">Résumé</a>
+</nav>
+
+<main>
+
+    <!-- Known Vulnerabilities Section -->
+    <section id="vulnerabilities">
+        <h2>Known Vulnerabilities and Mitigation Strategies</h2>
+        <p>This paper outlines vulnerabilities in Apache, Microsoft, and PHP systems, along with mitigation strategies, security software, and monitoring practices.</p>
+        <h3>Apache</h3>
+        <ul>
+            <li><strong>Buffer Overflow (CVE-2017-7679):</strong> Improper input validation allowing remote code execution.</li>
+            <li><strong>Path Traversal (CVE-2021-41773):</strong> Access to files outside document root via path manipulation.</li>
+            <li><strong>HTTP Request Smuggling (CVE-2021-40438):</strong> Forward requests to unauthorized backend servers.</li>
+        </ul>
+        <h3>Microsoft</h3>
+        <ul>
+            <li><strong>EternalBlue (CVE-2017-0144):</strong> Remote code execution via SMBv1.</li>
+            <li><strong>BlueKeep (CVE-2019-0708):</strong> RDP vulnerability allowing remote code execution.</li>
+            <li><strong>PrintNightmare (CVE-2021-34527):</strong> Exploitation of Print Spooler service.</li>
+        </ul>
+        <h3>PHP</h3>
+        <ul>
+            <li><strong>Remote Code Execution (CVE-2019-11043)</strong></li>
+            <li><strong>Deserialization Vulnerability (CVE-2019-11034)</strong></li>
+            <li><strong>Remote File Inclusion (RFI)</strong></li>
+        </ul>
+        <h3>Mitigation Strategies</h3>
+        <ul>
+            <li>Regular updates, access controls, input validation, network segmentation, firewalls.</li>
+        </ul>
+        <h3>Security Software & Monitoring</h3>
+        <ul>
+            <li>Web Application Firewall, Intrusion Detection Systems, Antivirus, SSL/TLS, Log Monitoring, SIEM, Automated Alerts, Regular Audits.</li>
+        </ul>
+    </section>
+
+    <!-- Performance Tuning Section -->
+    <section id="performance">
+        <h2>Performance Tuning & Optimization for Database Administrators</h2>
+        <p>This paper covers proactive and reactive strategies for database maintenance, performance tuning, and cybersecurity relevance.</p>
+        <h3>Key Maintenance Tasks</h3>
+        <ul>
+            <li>Database indexing and optimization</li>
+            <li>Query performance analysis</li>
+            <li>Database statistics updates</li>
+            <li>Archiving and purging old data</li>
+            <li>Backups and recovery testing</li>
+            <li>System resource monitoring</li>
+            <li>Database configuration tuning</li>
+            <li>Security and patch updates</li>
+            <li>Automated job scheduling</li>
+        </ul>
+        <h3>Example Tasks</h3>
+        <ol>
+            <li>Rebuilding indexes in MySQL</li>
+            <li>Archiving old records</li>
+            <li>Testing backup and recovery</li>
+        </ol>
+    </section>
+
+    <!-- Malware Detection Section -->
+    <section id="malware">
+        <h2>Detecting and Cleaning Up Malicious Processes</h2>
+        <p>This paper details practical incident response skills used to locate and terminate malicious processes such as WannaCry executables.</p>
+        <ul>
+            <li>Tools: VNC, Remote Desktop, Process Explorer.</li>
+            <li>Malware Detected: av.exe, mssecsvc2.0, tasksche.exe</li>
+            <li>Methods: Process tree analysis, hidden file path inspection, log data verification.</li>
+            <li>Containment: Stopping malicious services, system hardening, preventing spread across network.</li>
+        </ul>
+    </section>
+
+    <!-- Ethics and IT Section -->
+    <section id="ethics">
+        <h2>Ethics and IT: IT Equipment Usage and Abuse Prevention Guidelines</h2>
+        <p>This paper highlights organizational policies to maintain a secure, ethical, and productive workplace.</p>
+        <h3>IT Equipment Usage Guidelines</h3>
+        <ul>
+            <li>Prevent DoS attacks via network awareness, software restrictions, and email management.</li>
+            <li>Cybersecurity: Training, MFA, updates, firewalls, reporting suspicious activity.</li>
+            <li>Ethical software development: Privacy, consent, quality assurance.</li>
+        </ul>
+        <h3>Data Privacy and IT Usage Policy</h3>
+        <ul>
+            <li>Confidentiality, data handling, breach reporting, corporate IT usage, content restrictions, legal measures.</li>
+        </ul>
+        <h3>Social Media, Contingent Workers, and IP</h3>
+        <ul>
+            <li>Social media disclaimers and conduct, contingent worker rights, intellectual property compliance.</li>
+        </ul>
+        <h3>Workplace Privacy</h3>
+        <ul>
+            <li>Monitoring, GDPR, HIPAA compliance, secure communications, disciplinary actions, appeal process.</li>
+        </ul>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Résumé</h2>
+        <p>A professional overview highlighting IT, cybersecurity, and business analysis skills.</p>
+        <ul>
+            <li>IT Business Analyst with expertise in incident response, cybersecurity, and systems analysis.</li>
+            <li>Experience bridging technical and business concepts to drive results.</li>
+            <li>Focus on network defense, risk assessment, and practical problem-solving.</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Anna Kephart | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

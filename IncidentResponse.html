@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detecting and Cleaning Up Malicious Processes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Detecting and Cleaning Up Malicious Processes</h1>
+        <h3>Week 4 | M10E Scenario: Stop Ransomware Attack – Operation Crimson Wolf</h3>
+        <h4>Anna Kephart | ITS4239 – Incident Response SU01 | Instructor: Dr. Meadors | October 11, 2025</h4>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>Introduction</h2>
+            <p>
+                Objective 5 required identifying and stopping malicious processes on a compromised host. Tools used included VNC, Remote Desktop Protocol, and Process Explorer to investigate suspicious activity and confirm the presence of WannaCry-related files and processes.
+            </p>
+            <p>
+                Malicious executables identified included <strong>av.exe</strong>, <strong>mssecsvc2.0</strong>, and <strong>tasksche.exe</strong>, which mimicked legitimate system processes. By analyzing process trees, examining hidden file paths, and inspecting system internals, the malicious services were terminated and the infection contained.
+            </p>
+            <p>
+                This task demonstrates practical incident response skills, including log analysis, system administration commands, and malware verification, reflecting real-world ransomware response procedures.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Investigation and Process Analysis</h2>
+            <p>
+                Accessing the infected machine via VNC and RDP, I located the suspicious IP <code>172.16.10.102</code> from prior logs in ELSA. Initial exploration revealed signs of system corruption.
+            </p>
+            <p>
+                Using Sysinternals and Process Explorer, I examined all running processes, including parent/child relationships, loaded DLLs, network connections, CPU/memory usage, and file locations. This allowed the identification of suspicious processes such as <strong>mssecsvc2.0</strong>, <strong>tasksche.exe</strong>, and <strong>av.exe</strong>.
+            </p>
+            <p>
+                Hovering over each process revealed the full file paths. Malicious processes were terminated using <code>procexp.exe</code> and <code>sc stop mssecsvc2.0</code> to contain the WannaCry infection and prevent further spread.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Malware Cleanup Steps</h2>
+            <ol>
+                <li>Deleted the @WanaDecryptor@ file from the local C drive.</li>
+                <li>Opened Process Explorer as Administrator to view all processes.</li>
+                <li>Identified suspicious processes and their hidden file paths.</li>
+                <li>Terminated malicious processes and their child processes.</li>
+                <li>Documented corrupted and hidden paths for further system hardening.</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>Relevance to Cybersecurity</h2>
+            <p>
+                This exercise highlights core cybersecurity skills: process forensics, malware containment, and system hardening. It demonstrates the ability to analyze, identify, and respond to live threats in an enterprise environment, mirroring real-world incident response.
+            </p>
+        </section>
+
+        <div class="reference">
+            <h2>References</h2>
+            <p>
+                VX Underground. (2020, October 2). <em>Malware persistence mechanisms [PDF]</em>. InfoCon.org. <a href="https://infocon.org/mirrors/vx%20underground%20-%202025%20June/Papers/Windows/Persistence/2020-10-02%20-%20Malware%20Persistence%20Mechanisms.pdf" target="_blank">Link</a><br>
+                HADESS. (n.d.). <em>The art of Windows persistence</em>. HADESS Cyber Security Magic. <a href="https://hadess.io/the-art-of-windows-persistence/" target="_blank">Link</a><br>
+                Circadence. (n.d.). <em>ARES cyber range platform</em>. <a href="https://ares.circadence.com/" target="_blank">Link</a><br>
+                Microsoft. (2024, May 30). <em>Administrative tools and logon types reference</em>. Microsoft Learn. <a href="https://learn.microsoft.com/en-us/windows-server/identity/securing-privileged-access/reference-tools-logon-types" target="_blank">Link</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="projects.html">← Back to Portfolio Projects</a></p>
+        <p>&copy; 2025 Anya Kephart</p>
+    </footer>
+</body>
+</html>

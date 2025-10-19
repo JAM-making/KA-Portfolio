@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Tuning & Optimization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Performance Tuning & Optimization for Database Administrators</h1>
+        <h3>Week 5 Project | Anna Kephart | ITS4115 – Database Administration SU01</h3>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>Overview</h2>
+            <p>
+                This paper explains how organizations can maintain efficient and reliable database systems through both proactive and reactive strategies. 
+                The main goal is to ensure systems meet performance requirements, minimize downtime, and reduce operational risks. 
+                Tasks include database indexing, query performance analysis, updating statistics, archiving old data, testing backups, monitoring resources, configuration tuning, applying security patches, and automating jobs. 
+                Each task includes practical problem-solving approaches to handle issues like fragmented indexes, inefficient queries, or failed backups.
+            </p>
+            <p>
+                The relevance to cybersecurity is highlighted through tasks such as security patching, backup testing, and monitoring, demonstrating a clear understanding of safeguarding systems against vulnerabilities and failures. 
+                By outlining both technical steps and reasoning, this work reflects the analytical, methodical, and preventative skills essential for cybersecurity roles.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Comprehensive Maintenance Tasks</h2>
+            
+            <h3>Database Indexing and Optimization</h3>
+            <p>Indexes improve query efficiency by reducing scanned data. Rebuilding or reorganizing indexes prevents fragmentation.</p>
+            <ul>
+                <li>Problem handling: Rebuild fragmented indexes. Drop unnecessary indexes that slow inserts or updates.</li>
+            </ul>
+
+            <h3>Query Performance Analysis</h3>
+            <p>Inefficient queries cause slowdowns. Tools like EXPLAIN (MySQL) reveal execution paths and bottlenecks.</p>
+            <ul>
+                <li>Problem handling: Rewrite inefficient queries, use indexes, or break complex queries into smaller parts.</li>
+            </ul>
+
+            <h3>Database Statistics Updates</h3>
+            <p>Query optimizers depend on statistics. Outdated stats can lead to poor execution plans.</p>
+            <ul>
+                <li>Problem handling: Run ANALYZE TABLE or enable automatic stats updates.</li>
+            </ul>
+
+            <h3>Archiving and Purging Old Data</h3>
+            <p>Removing outdated records keeps datasets smaller and queries faster.</p>
+            <ul>
+                <li>Problem handling: Restore accidentally archived data from backups. Test scripts on staging before production.</li>
+            </ul>
+
+            <h3>Backups and Recovery Testing</h3>
+            <p>Backups safeguard data but must be tested for recoverability.</p>
+            <ul>
+                <li>Problem handling: Troubleshoot failed backups or recovery tests and re-run.</li>
+            </ul>
+
+            <h3>System Resource Monitoring</h3>
+            <p>Monitoring CPU, memory, disk I/O, and query times helps identify bottlenecks early.</p>
+            <ul>
+                <li>Problem handling: Investigate spikes caused by queries, indexes, or configuration settings.</li>
+            </ul>
+
+            <h3>Database Configuration Tuning</h3>
+            <p>Adjust buffer sizes, cache, and logging to maximize performance.</p>
+            <ul>
+                <li>Problem handling: Revert and adjust incrementally if performance drops.</li>
+            </ul>
+
+            <h3>Security and Patch Updates</h3>
+            <p>Apply security patches to prevent vulnerabilities and ensure stability.</p>
+            <ul>
+                <li>Problem handling: Roll back unstable patches; test updates in controlled environments first.</li>
+            </ul>
+
+            <h3>Automated Job Scheduling</h3>
+            <p>Automate tasks during off-peak hours to reduce load.</p>
+            <ul>
+                <li>Problem handling: Check logs and reschedule failed jobs; use alerts for visibility.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Step-by-Step Instructions for Selected Tasks</h2>
+
+            <h3>Task 1: Rebuilding Indexes in MySQL</h3>
+            <ol>
+                <li>Log into MySQL: <code>mysql -u root -p</code></li>
+                <li>Select the database: <code>USE USLP;</code></li>
+                <li>Run optimization: <code>ALTER TABLE Members OPTIMIZE;</code></li>
+                <li>Verify using EXPLAIN to confirm improved query performance.</li>
+            </ol>
+
+            <h3>Task 2: Archiving Old Records</h3>
+            <ol>
+                <li>Create an archive table: <code>CREATE TABLE MembersArchive LIKE Members;</code></li>
+                <li>Move inactive records: <code>INSERT INTO MembersArchive SELECT * FROM Members WHERE ActiveStatus = 'Inactive';</code></li>
+                <li>Delete archived records from main table: <code>DELETE FROM Members WHERE ActiveStatus = 'Inactive';</code></li>
+                <li>Verify counts match and archive contains correct records.</li>
+            </ol>
+
+            <h3>Task 3: Testing a Backup and Recovery</h3>
+            <ol>
+                <li>Backup: <code>mysqldump -u root -p USLP > uslp_backup.sql</code></li>
+                <li>Simulated drop: <code>DROP DATABASE USLP;</code></li>
+                <li>Restore: <code>mysql -u root -p USLP < uslp_backup.sql</code></li>
+                <li>Verify tables and data with sample queries after restoration.</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>Conclusion</h2>
+            <p>
+                A well-planned maintenance strategy ensures smooth operations and minimizes risks. Regular indexing, query optimization, archiving, backups, and monitoring, along with contingency plans, make performance tuning reliable and cost-effective.
+            </p>
+        </section>
+
+        <div class="reference">
+            <h2>References</h2>
+            <p>
+                Elmasri, R., & Navathe, S. B. (2015). <em>Fundamentals of Database Systems (7th ed.)</em>. Pearson.<br>
+                Silberschatz, A., Korth, H. F., & Sudarshan, S. (2020). <em>Database System Concepts (7th ed.)</em>. McGraw-Hill.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="projects.html">← Back to Portfolio Projects</a></p>
+        <p>&copy; 2025 Anya Kephart</p>
+    </footer>
+</body>
+</html>

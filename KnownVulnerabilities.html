@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Known Vulnerabilities and Mitigation Strategies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Known Vulnerabilities and Mitigation Strategies</h1>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>Apache</h2>
+            <ol>
+                <li><strong>Buffer Overflow (CVE-2017-7679)</strong><br>
+                    Description: A vulnerability caused by improper input validation in Apache HTTP Server could allow remote attackers to execute arbitrary code (Apache, 2017).
+                </li>
+                <li><strong>Path Traversal (CVE-2021-41773)</strong><br>
+                    Description: This vulnerability allowed attackers to map URLs to files outside the expected document root by using path traversal patterns (Apache, 2021).
+                </li>
+                <li><strong>HTTP Request Smuggling (CVE-2021-40438)</strong><br>
+                    Description: Caused by improper validation of HTTP requests, this vulnerability could allow attackers to forward requests to unauthorized backend servers (Apache, 2021).
+                </li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>Microsoft</h2>
+            <ol>
+                <li><strong>EternalBlue (CVE-2017-0144)</strong><br>
+                    Description: A critical vulnerability in the SMBv1 protocol allowed remote code execution through specially crafted packets (Microsoft, 2017).
+                </li>
+                <li><strong>BlueKeep (CVE-2019-0708)</strong><br>
+                    Description: Remote Desktop Services vulnerability allowing remote code execution without authentication (Microsoft, 2019).
+                </li>
+                <li><strong>PrintNightmare (CVE-2021-34527)</strong><br>
+                    Description: A vulnerability in the Windows Print Spooler service allowed attackers to execute arbitrary code remotely (Microsoft, 2021).
+                </li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>PHP</h2>
+            <ol>
+                <li><strong>Remote Code Execution (CVE-2019-11043)</strong><br>
+                    Description: This vulnerability allowed attackers to exploit a buffer overflow on NGINX servers running PHP-FPM or FastCGI Process Manager, potentially leading to data breaches (PHP, 2019).
+                </li>
+                <li><strong>Deserialization Vulnerability (CVE-2019-11034)</strong><br>
+                    Description: The deserialization process could be manipulated to execute malicious code through the exif extension, enabling system access or crashes when corrupted data was reprocessed (PHP, 2019).
+                </li>
+                <li><strong>Remote File Inclusion (RFI)</strong><br>
+                    Description: A common vulnerability where user input is improperly validated, allowing attackers to execute unwanted code via input fields (PHP, n.d.).
+                </li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>Mitigation Strategies</h2>
+            <ul>
+                <li><strong>Regular Updates:</strong> Keep all systems updated with the latest patches and have a process to monitor emerging threats (Microsoft, n.d.).</li>
+                <li><strong>Access Controls:</strong> Enforce strict permissions to limit access to critical systems and data (NIST, 2019).</li>
+                <li><strong>Input Validation:</strong> Validate and sanitize user input to prevent injection attacks and encrypt data before transmission (OWASP, 2021).</li>
+                <li><strong>Network Segmentation:</strong> Separate business units into isolated LANs to minimize the impact of potential breaches (Cisco, 2020).</li>
+                <li><strong>Firewalls:</strong> Use robust firewall configurations to restrict access to critical systems (Fortinet, 2021).</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Security Software and Hardware Components</h2>
+            <ul>
+                <li><strong>Web Application Firewall (WAF):</strong> Filters and monitors HTTP traffic to prevent common web attacks (Cloudflare, n.d.).</li>
+                <li><strong>Intrusion Detection System (IDS):</strong> Monitors network traffic for suspicious activity and sends alerts for potential threats (Snort, 2021).</li>
+                <li><strong>Antivirus Software:</strong> Detects and removes malware while providing additional firewall protection (Symantec, 2021).</li>
+                <li><strong>SSL/TLS Certificates:</strong> Encrypts communication between servers and clients to prevent eavesdropping (Let’s Encrypt, 2021).</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Monitoring and Alerting</h2>
+            <ul>
+                <li><strong>Log Monitoring:</strong> Regularly check server logs for unusual behavior to enable immediate response (Splunk, 2021).</li>
+                <li><strong>Security Information and Event Management (SIEM):</strong> Aggregate and analyze security data from multiple sources to detect threats (ELK Stack, n.d.).</li>
+                <li><strong>Automated Alerts:</strong> Configure automated alerts to notify administrators of incidents (PagerDuty, 2021).</li>
+                <li><strong>Regular Audits:</strong> Conduct regular security audits to identify and fix vulnerabilities (ISACA, 2019).</li>
+            </ul>
+        </section>
+
+        <div class="reference">
+            <h2>References</h2>
+            <p>
+                Apache. (2017). <em>Buffer overflow (CVE-2017-7679)</em>. Retrieved from https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2017-7679<br>
+                Apache. (2021). <em>Path traversal (CVE-2021-41773)</em>. Retrieved from https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2021-41773<br>
+                Apache. (2021). <em>HTTP request smuggling (CVE-2021-40438)</em>. Retrieved from https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2021-40438<br>
+                Cisco. (2020). <em>Network segmentation</em>. Retrieved from https://www.cisco.com/c/en/us/solutions/enterprise-networks/segmentation.html<br>
+                Cloudflare. (n.d.). <em>Web application firewall (WAF)</em>. Retrieved from https://www.cloudflare.com/en-gb/waf/<br>
+                ELK Stack. (n.d.). <em>Security information and event management (SIEM)</em>. Retrieved from https://www.elastic.co/siem<br>
+                Fortinet. (2021). <em>Firewalls</em>. Retrieved from https://www.fortinet.com/products/firewall.html<br>
+                ISACA. (2019). <em>Regular audits</em>. Retrieved from https://www.isaca.org/resources/isaca-journal/issues/2019/volume-5/regulatory-compliance-vs-security-what-are-the-differences<br>
+                Let’s Encrypt. (2021). <em>SSL/TLS certificates</em>. Retrieved from https://letsencrypt.org/<br>
+                Microsoft. (n.d.). <em>Regular updates</em>. Retrieved from https://support.microsoft.com/en-us/help/12373/windows-update-faq<br>
+                Microsoft. (2017). <em>EternalBlue (CVE-2017-0144)</em>. Retrieved from https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0144<br>
+                Microsoft. (2019). <em>BlueKeep (CVE-2019-0708)</em>. Retrieved from https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708<br>
+                Microsoft. (2021). <em>PrintNightmare (CVE-2021-34527)</em>. Retrieved from https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-34527<br>
+                NIST. (2019). <em>Access controls</em>. Retrieved from https://csrc.nist.gov/glossary/term/access_control<br>
+                OWASP. (2021). <em>Input validation</em>. Retrieved from https://owasp.org/www-project-cheat-sheets/cheat-sheets/Input_Validation_Cheat_Sheet.html<br>
+                PHP. (2019). <em>Deserialization vulnerability (CVE-2019-11034)</em>. Retrieved from https://php.net/security/CVE-2019-11034<br>
+                PHP. (2019). <em>Remote code execution (CVE-2019-11043)</em>. Retrieved from https://php.net/security/CVE-2019-11043<br>
+                PHP. (n.d.). <em>Remote file inclusion (RFI)</em>. Retrieved from https://php.net/security/RFI<br>
+                Snort. (2021). <em>Intrusion detection system (IDS)</em>. Retrieved from https://www.snort.org/<br>
+                Splunk. (2021). <em>Log monitoring</em>. Retrieved from https://www.splunk.com/<br>
+                Symantec. (2021). <em>Antivirus software</em>. Retrieved from https://www.symantec.com/<br>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="projects.html">← Back to Portfolio Projects</a></p>
+        <p>&copy; 2025 Anya Kephart</p>
+    </footer>
+</body>
+</html>

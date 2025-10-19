@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Anya Kephart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+    </script>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+            color: #222;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: white; /* Ensures title is white */
+        }
+        nav {
+            background-color: #0066cc;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #004080;
+        }
+        main {
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #004080;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-info p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 12px;
+            font-size: 1em;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0066cc;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contact Anya Kephart</h1>
+    <p>Get in touch regarding IT, cybersecurity, or professional opportunities</p>
+</header>
+
+<nav>
+    <a href="index.html">Portfolio</a>
+    <a href="https://www.linkedin.com/in/anna-kephart/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</nav>
+
+<main>
+    <section class="contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>Email:</strong> <a href="mailto:fourn6a@gmail.com">fourn6a@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+18033948496">+1 (803) 394-8496</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anna-kephart/" target="_blank" rel="noopener noreferrer">Profile</a></p>
+    </section>
+
+    <section class="contact-form">
+        <h2>Send a Message</h2>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+<!-- Add this inside <body> below the form -->
+<div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+    background: rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; text-align:center;">
+        <p id="popupMessage"></p>
+        <button onclick="closePopup()" style="margin-top:10px; padding:10px 20px; border:none; 
+            background:#004080; color:white; border-radius:5px; cursor:pointer;">Close</button>
+    </div>
+</div>
+
+<!-- ✅ Include EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("x_0nRAF14333XCeh5");
+  })();
+</script>
+
+<script>
+const form = document.getElementById('contactForm');
+const popup = document.getElementById('popup');
+const popupMessage = document.getElementById('popupMessage');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+   emailjs.sendForm("service_9k072y6","template_9v8pxg6",form, "x_0nRAF14333XCeh5")
+    .then(() => {
+        popupMessage.textContent = "Your message has been sent successfully!";
+        popup.style.display = "flex";
+        form.reset();
+    }, (err) => {
+        popupMessage.textContent = "Failed to send message. Please try again.";
+        popup.style.display = "flex";
+        console.error(err);
+    });
+});
+
+function closePopup() {
+    popup.style.display = "none";
+}
+</script>
+
+        <p id="formStatus"></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Anya Kephart | <a href="https://www.linkedin.com/in/anna-kephart/" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration:underline;">LinkedIn Profile</a></p>
+</footer>
+
+<script>
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(() => {
+            status.textContent = "Message sent successfully!";
+            status.style.color = "green";
+            form.reset();
+        }, (err) => {
+            status.textContent = "Failed to send message. Please try again.";
+            status.style.color = "red";
+            console.error(err);
+        });
+    });
+</script>
+
+</body>
+</html>
